@@ -1,0 +1,17 @@
+Assignment on Startup & Linker
+Below is a concise overview of the assignment, wherein you are tasked with making modifications to the Baremetal_v1 project. 
+You are strongly encouraged to use internet or collaborate with your batchmates; however, the work submitted should be solely your own. Do 
+not worry about the correctness of your solution.
+ Learning Outcomes
+ • Create custom data sections using GCC attributes
+ • Control exact placement in flash via linker script
+ • Copy initialized data from flash to RAM in reset handler
+ • Use linker-defined symbols for runtime relocation
+ Details of Assignment
+ 1. Create a uint32_t 5-element array in main.c and place it into a custom section named .cosmic_constellation section 
+ 2. This cosmic_constellation section is placed at LMA address 0x00003000 (modify linker script)
+ 3. The same section’s runtime (VMA) is in RAM, located immediately after the .bss section
+ 4. In the Reset_Handler, add code to copy the contents of . cosmic_constellation from its LMA (0x00003000) to its runtime VMA address 
+(hint – use linker symbols/markers to know VMA/LMA addresses).
+ 5. Verify via the map file the VMA and LMA addresses of cosmic_constellation section
+ 6. Access copied data in main() and Verify via debugger the data in cosmic_constellation section
