@@ -1,4 +1,3 @@
- Dual-Placement Strategy
 
 The `.cosmic_constellation` section contains a 5-element `uint32_t` array. It is placed at **LMA `0x00003000`** in FLASH using the `AT()` directive and relocated to **RAM at runtime**, immediately after `.bss`. This ensures the section is initialized from FLASH but accessed from RAM during execution.
 
