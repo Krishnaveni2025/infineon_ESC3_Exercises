@@ -1,28 +1,3 @@
-
-
-
-<img width="1416" height="341" alt="image" src="https://github.com/user-attachments/assets/2fc8209f-940d-47db-a63f-ae04ac9d9083" />
-
-
-
-<img width="1742" height="159" alt="image" src="https://github.com/user-attachments/assets/c0f3b3b8-eb87-46dc-905a-53899036269f" />
-
-
-
-
-
-
-<img width="1773" height="156" alt="image" src="https://github.com/user-attachments/assets/5ceee613-3b36-4586-8c9f-92b5da6bdbc1" />
-
-
-
-
-
-
-<img width="1766" height="777" alt="image" src="https://github.com/user-attachments/assets/9f1f9165-7de6-45c6-ab81-f7ae4afead3f" />
-
-
-
  Dual-Placement Strategy
 
 The `.cosmic_constellation` section contains a 5-element `uint32_t` array. It is placed at **LMA `0x00003000`** in FLASH using the `AT()` directive and relocated to **RAM at runtime**, immediately after `.bss`. This ensures the section is initialized from FLASH but accessed from RAM during execution.
@@ -92,21 +67,32 @@ This function is called from `Reset_handler()` to copy the section from FLASH to
 
 ## 🖼️ Debugger Verification Screenshots
 
-### 📌 Screenshot 1: RAM View at VMA (`0x2000000C`)
+### 📌  1: RAM View at VMA (`0x2000000C`)
 - Shows relocated values: `0x0000000B`, `0x00000016`, `0x00000021`, `0x0000002C`, `0x00000037`
 - Confirms successful relocation of `.cosmic_constellation` to RAM
 
-### 📌 Screenshot 2: Symbol and Memory Layout
+  
+<img width="1742" height="159" alt="image" src="https://github.com/user-attachments/assets/c0f3b3b8-eb87-46dc-905a-53899036269f" />
+
+
+- after modigication during runtime VMA
+
+
+<img width="1773" height="156" alt="image" src="https://github.com/user-attachments/assets/5ceee613-3b36-4586-8c9f-92b5da6bdbc1" />
+
+
+
+### 📌  2: Symbol and Memory Layout
 - Displays linker symbols:
   - `_start_cosmic_constellation_lma`
   - `__cosmic_constellation_start_vma`
   - `__cosmic_constellation_end_vma`
 - Confirms correct placement and size of the section
+  <img width="1416" height="341" alt="image" src="https://github.com/user-attachments/assets/2fc8209f-940d-47db-a63f-ae04ac9d9083" />
 
-### 📌 Screenshot 3: Variable Watch and Execution Flow
+### 📌 3: Variable Watch and Execution Flow
 - Shows `stars[0]` and `stars[4]` accessed in `main()`
 - Verifies modified values (`100`, `200`) after runtime changes
 - Confirms execution flow and memory updates
 
-
-Let me know if you'd like help bundling this README with your source files and screenshots into a ZIP archive, or adapting it for GitHub with Markdown 
+<img width="1766" height="777" alt="image" src="https://github.com/user-attachments/assets/9f1f9165-7de6-45c6-ab81-f7ae4afead3f" />
