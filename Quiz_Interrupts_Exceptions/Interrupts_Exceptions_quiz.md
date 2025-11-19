@@ -126,3 +126,5 @@ This push/pop symmetry is a hallmark of ARM Cortex-M interrupt handlers. It ensu
 
 <img width="1699" height="650" alt="image" src="https://github.com/user-attachments/assets/11ee33d9-ec41-48e4-8c8e-ed1a63c31b47" />
 
+<img width="1719" height="886" alt="image" src="https://github.com/user-attachments/assets/dff588ea-84b8-4c4e-85d5-1dc9cd604f6e" />
+
