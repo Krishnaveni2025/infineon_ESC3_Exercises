@@ -102,15 +102,13 @@ ans: CFLAGS = $(DFLAGS) -g -c -Wall -Wextra -std=gnu11 -O2 -DSEMIHOSTING=$(SEMIH
 
 **11.This will output C-Assembly mixed code. What assembly instruction do you see right at the start of ioss\_interrupts\_gpio\_3\_IRQHandler?**
 
-&nbsp; d6:   b580            **push**    {r7, lr} (at the start of ioss\_interrupts\_gpio\_3\_IRQHandler)
-
-&nbsp;
+6:   b570            push    {r4, r5, r6, lr}
 
 **12.Do you see a reversal of it towards the function end? If so, what is it?**
 
 **ans:**   
 
- d6:   b580            **push**    {r7, lr} (at the start of ioss\_interrupts\_gpio\_3\_IRQHandler)
+ 28:   bd70            pop     {r4, r5, r6, pc}
 
 This saves the frame pointer (r7) and return address (lr) onto the stack
 
@@ -125,4 +123,6 @@ This saves the frame pointer (r7) and return address (lr) onto the stack
 This restores r7 and loads the return address into pc, effectively returning from the interrupt.
 
 This push/pop symmetry is a hallmark of ARM Cortex-M interrupt handlers. It ensures that the processor state is preserved and restored correctly across the interrupt execution.
+
+<img width="1699" height="650" alt="image" src="https://github.com/user-attachments/assets/11ee33d9-ec41-48e4-8c8e-ed1a63c31b47" />
 
