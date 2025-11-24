@@ -1,0 +1,10 @@
+Assignment-1
+
+Use the project today (22/Nov) given to you as a basis. Modify it to as following:
+
+No LED blinks until and unless a key press is detected
+When a key press event is detected, the LEDs are toggled continuously in the following sequence: LED10, LED9, LED8, LED7, LED6, LED5, LED11, LED12, LED13 (Sequence-1)
+When a key press event is detected again, the LEDs are toggled continuously in the reverse order: LED13, LED12, LED11, LED5, LED6, LED7, LED8, LED9, LED10 (Sequence-2)
+Example: Seq1, Seq1, Seq1, Seq1, KP, Seq2, Seq2, Seq2, Seq2, KP, Seq1, Seq1… (Here, KP is Key Press event)
+
+Note: Suppose in Seq1, your software was toggling LED-7 at the time of a Key Press (KP) event, the remainder of the sequence should be abandoned and Sequence-2 instead must be launched.
