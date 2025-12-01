@@ -1,0 +1,9 @@
+1. Duty Cycle = 0.2
+2. DC Voltage = Supply DC* Duty Cycle = 5*0.2 = 1V  
+3. No
+4. PWM Line Output Name: tcpwm.line[3]
+   Timer Source: It comes from Timer 3. 
+5. ACT#0(Chip specific Active source 0 connection)
+6. HSIOM_PORT_SEL1
+7. Address: 0x40020100
+   For Pad 2 bit fields 11:8 -> 0x8 (ACT_0)
