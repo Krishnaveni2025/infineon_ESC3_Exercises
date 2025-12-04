@@ -29,7 +29,11 @@ Then, set CLK_SELECT to source EXTCLK (bits 1:0 = 01) and divider 4 (bits 3:2 = 
 
 
 **3. Assume that the PLL sub-system has been configured to generate 200 MHz. How will you route this clock to HFCLK net?**
-Ans:
+Ans:It is impossible to route 200 MHz to the HFCLK net because the PSoC 4100S Plus maximum frequency is 48 MHz.
+If the PLL were configured for a valid frequency (e.g., 48 MHz), the routing sequence is:
+Select PLL Output: Set EXCO_CLK_SELECT to select PLL (value 1 or 2).
+Route to HFCLK: Set CLK_SELECT source bits [1:0] to EXCO/PLL (value 2 or 10 binary).
+<img width="1221" height="190" alt="image" src="https://github.com/user-attachments/assets/fa23d915-f10a-4717-bafe-f8d74bdc12e3" />
 
 
 
