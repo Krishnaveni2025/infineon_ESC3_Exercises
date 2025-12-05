@@ -15,6 +15,8 @@ Ans:
      To set the HFCLK predivider to 2, write the binary value 01 to bits [3:2] of the CLK_SELECT register at address 0x40030028.
 
 **2. Assume EXTCLK to be 48 MHz. Choosing EXTCLK as the clock source, What should be the programming sequence to deliver 12 MHz to the HFCLK net?**
+
+
 Ans: Configure P0[6] as High-Z Digital (Mode 1) with HSIOM set to 0x8 (Active Source 0) to route the external clock. 
 Then, set CLK_SELECT to source EXTCLK (bits 1:0 = 01) and divider 4 (bits 3:2 = 10) to derive 12 MHz from the 48 MHz input.
  <img width="1211" height="252" alt="image" src="https://github.com/user-attachments/assets/57fa5152-4071-4429-8f67-38b9ab082bd2" />
@@ -29,12 +31,16 @@ Then, set CLK_SELECT to source EXTCLK (bits 1:0 = 01) and divider 4 (bits 3:2 = 
 
 
 **3. Assume that the PLL sub-system has been configured to generate 200 MHz. How will you route this clock to HFCLK net?**
+
+
 Ans:It is impossible to route 200 MHz to the HFCLK net because the PSoC 4100S Plus maximum frequency is 48 MHz.
 If the PLL were configured for a valid frequency (e.g., 48 MHz), the routing sequence is:
 Select PLL Output: Set EXCO_CLK_SELECT to select PLL (value 1 or 2).
 Route to HFCLK: Set CLK_SELECT source bits [1:0] to EXCO/PLL (value 2 or 10 binary).
 <img width="1221" height="190" alt="image" src="https://github.com/user-attachments/assets/fa23d915-f10a-4717-bafe-f8d74bdc12e3" />
 
+<img width="1010" height="786" alt="image" src="https://github.com/user-attachments/assets/6e4c7138-1146-423c-b653-7ca314f8f5c6" />
+<img width="1011" height="712" alt="image" src="https://github.com/user-attachments/assets/201506e2-ab40-4d70-9e53-0ce4a5f98662" />
 
 
 **4. IMO generates by default 24 MHz. Choosing IM as the clock source, what should be the programming sequence to deliver 24 MHz to the ADC peripheral?**
