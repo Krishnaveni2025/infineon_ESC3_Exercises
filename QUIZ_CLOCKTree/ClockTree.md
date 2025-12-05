@@ -36,7 +36,7 @@ Then, set CLK_SELECT to source EXTCLK (bits 1:0 = 01) and divider 4 (bits 3:2 = 
 Ans:It is impossible to route 200 MHz to the HFCLK net because the PSoC 4100S Plus maximum frequency is 48 MHz.
 If the PLL were configured for a valid frequency (e.g., 48 MHz), the routing sequence is:
 Select PLL Output: Set EXCO_CLK_SELECT to select PLL (value 1 or 2).
-Route to HFCLK: Set CLK_SELECT source bits [1:0] to EXCO/PLL (value 2 or 10 binary).
+Route to HFCLK: Set CLK_SELECT source bits [1:0] to EXCO/PLL (value 2 or 10 binary) setting the HFCLK_DIV bits to divide by 8(because allowable range <=48MHz), resulting in a 25 MHz HFCLK.
 <img width="1221" height="190" alt="image" src="https://github.com/user-attachments/assets/fa23d915-f10a-4717-bafe-f8d74bdc12e3" />
 
 <img width="1010" height="786" alt="image" src="https://github.com/user-attachments/assets/6e4c7138-1146-423c-b653-7ca314f8f5c6" />
@@ -44,4 +44,4 @@ Route to HFCLK: Set CLK_SELECT source bits [1:0] to EXCO/PLL (value 2 or 10 bina
 
 
 **4. IMO generates by default 24 MHz. Choosing IM as the clock source, what should be the programming sequence to deliver 24 MHz to the ADC peripheral?**
-Ans:
+Ans: Configure CLK_SELECT to route the IMO to HFCLK with no divider, set a 16-bit peripheral divider (e.g., PERI_DIV_16_CTL0) to 0 (divide-by-1), and select that divider in the ADC's PERI_PCLK_CTLx register to route the 24 MHz clock.
