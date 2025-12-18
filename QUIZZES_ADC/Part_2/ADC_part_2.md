@@ -10,6 +10,8 @@ Follow the 8 bit conversion sequence with 10 bit conversion sequence. This means
 In all three cases, ensure that the LDR does not receive any light. Compare the three results.
  
 
+
+
  
 
 Project2:
