@@ -17,7 +17,7 @@ Dynamic Switching: Added code in the main loop to toggle the global
 SUB_RESOLUTION bit in SAR_SAMPLE_CTRL (switching between 8-bit and
 10-bit) before triggering each respective conversion.
 
-Your screenshot confirms it is working perfectly!
+below screenshot confirms it is working perfectly!
 
 12-bit: 1469
 10-bit: 366 (x4 ≈ 1464)
