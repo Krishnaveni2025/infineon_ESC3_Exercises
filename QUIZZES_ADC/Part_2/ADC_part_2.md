@@ -17,3 +17,4 @@ In all three cases, ensure that the LDR does not receive any light. Compare the 
 Project2:
 
 Take the base ADC project and modify the results alignment to Left Aligned. Share a screenshot of the result extracted after the conversion. Compare that to the Right Aligned result
+<img width="1857" height="471" alt="image" src="https://github.com/user-attachments/assets/f5509aca-82ce-4def-85ec-81610806ee24" />
