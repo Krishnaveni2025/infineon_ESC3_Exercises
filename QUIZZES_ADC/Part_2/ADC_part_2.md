@@ -18,3 +18,6 @@ Project2:
 
 Take the base ADC project and modify the results alignment to Left Aligned. Share a screenshot of the result extracted after the conversion. Compare that to the Right Aligned result
 <img width="1857" height="471" alt="image" src="https://github.com/user-attachments/assets/f5509aca-82ce-4def-85ec-81610806ee24" />
+<img width="1898" height="649" alt="image" src="https://github.com/user-attachments/assets/7bd31f4c-fefc-4419-9ac8-adbdf9368701" />
+<img width="1919" height="524" alt="image" src="https://github.com/user-attachments/assets/e1dfd2da-2f76-42be-b5d9-7b9d7d9981fc" />
+
